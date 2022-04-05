@@ -14,7 +14,8 @@ require(`${APP}/todo.route`)({url:'/api/todo',app})
 require(`${APP}/user.route`)({url:'/api/user',app})
 require(`${APP}/game.route`)({url:'/api/game',app})
 require(`${APP}/admin.route`)({url:'/api/admin',app})
-require(`${APP}/basic.route`)({url:'/api/basic',app})
+require(`${APP}/bmi.route`)({url:'/api/basic',app})
+require(`${APP}/calc.route`)({url:'/api/basic',app})
 
 var corsOptions = {
   origin: 'http://localhost:3000',
