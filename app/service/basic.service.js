@@ -105,11 +105,13 @@ exports.getRps =(payload)=>{
 }
 
 exports.getEchant =(payload)=>{
-    const {weapon}=payload
+    const {item}=payload
     let percent = Math.floor(Math.random()*10)+1
-    const result={weapon,percent}
+    let acc= Math.floor(Math.random()*20)+1
+    let complete= Math.floor(Math.random()*100)+1
+    const result={item,percent}
 
-    switch(weapon) {
+    switch(item) {
         case 'sword' :
             if (percent>=3){
                 result.res='오~~성공! 오오오오올~~ 기뻐하지마 70프로야ㅋㅋㅋ'
@@ -158,7 +160,35 @@ exports.getEchant =(payload)=>{
             }
             else if (percent<10){
                 result.res='식칼을 왜 강화하려는거야ㅋㅋㅋ 극악난이도임ㅋㅋㅋ'
-            } break;       
+            } break;
+        case 'ring' :
+            if (acc>=17){
+                result.res='오~~성공ㅋㅋㅋ 이제 귀걸이해봨ㅋㅋㅋ'
+            }
+            else if (acc<17){
+                result.res='악세는 원래 잘 안뜬단닼ㅋㅋㅋㅋ'
+            } break;   
+        case 'ear' :
+            if (acc>=18){
+                result.res='오올~~!!성공!! 이제 목걸이해봨ㅋㅋㅋ'
+            }
+            else if (acc<18){
+                result.res='악세는 원래 잘 안뜬단다ㅋㅋㅋㅋ 귀걸이는 더힘들지'
+            } break; 
+        case 'neck' :
+            if (acc>=19){
+                result.res='오옹~~!!!! 성공!! 미리 주의 절대반지는 노건들'
+            }
+            else if (acc<19){
+                result.res='악세는 원래 잘 안뜬단다ㅋㅋㅋㅋ'
+            } break;
+        case 'absoluteRing' :
+            if (complete == 50){
+                result.res='ㅁㅊ 운빨보소... 성공... 로또 사라 진심으로...'
+            }
+            else 
+                result.res='실패지 놀래긴ㅋㅋㅋ 웰컴투더 헬ㅋㅋㅋ 손가락 나간다ㅋㅋㅋㅋ'
+             break;    
     }
     return result
 }
