@@ -68,17 +68,39 @@ exports.getRps =(payload)=>{
     let _com= Number(computer)
     const result ={user,computer}
     
-    if(_user - _com == 2)
-        result.res='User 승!'
-    else if (_com - _user == -1)
-        result.res='User 승!'
-    else if (_user - _com == 1)
-        result.res='Computer 승!'
-    else if (_com - _user == -2)
-        result.res='Computer 승!'
-    else if (_user - _com == 0)
-        result.res='DRAW'
-
+    if(_com == 0){
+        if (_user == 1){
+            result.res='User 승!'
+        }
+        else if (_user == 2){
+            result.res='Computer 승!'
+        }
+        else if (_user == 0){
+            result.res='DRAW!'
+        }
+    }
+    else if(_com == 1){
+        if (_user == 2){
+            result.res='User 승!'
+        }
+        else if (_user == 0){
+            result.res='Computer 승!'
+        }
+        else if (_user == 1){
+            result.res='DRAW!'
+        }
+    }
+    else if(_com == 2){
+        if (_user == 0){
+            result.res='User 승!'
+        }
+        else if (_user == 1){
+            result.res='Computer 승!'
+        }
+        else if (_user == 2){
+            result.res='DRAW!'
+        }
+    }
     return result
 }
 
@@ -89,55 +111,54 @@ exports.getEchant =(payload)=>{
 
     switch(weapon) {
         case 'sword' :
-            if (percent>3){
+            if (percent>=3){
                 result.res='오~~성공! 오오오오올~~ 기뻐하지마 70프로야ㅋㅋㅋ'
             }
             else if (percent<3){
                 result.res='ㅋㅋㅋㅋㅋㅋㅋㅋ 똥손 ㅅㄱ 게임 첨 해봄?ㅋㅋㅋㅋ'
             } break;
         case 'greatSword' :
-            if (percent>4){
+            if (percent>=4){
                 result.res='오~~성공! 오오오오올~~ 기뻐하지마 60프로야ㅋㅋㅋ'
             }
             else if (percent<4){
                 result.res='ㅋㅋㅋㅋㅋㅋㅋㅋ 똥손 ㅅㄱ 게임 첨 해봄?ㅋㅋㅋㅋ'
             } break;
         case 'shortSword' :
-            if (percent>5){
+            if (percent>=5){
                 result.res='오~~성공! 오오오오올~~ 기뻐하지마 50프로야ㅋㅋㅋ'
             }
             else if (percent<5){
                 result.res='ㅋㅋㅋㅋㅋㅋㅋㅋ 똥손 ㅅㄱ 게임 첨 해봄?ㅋㅋㅋㅋ'
             } break;
         case 'wand' :
-            if (percent>6){
+            if (percent>=6){
                 result.res='오~~성공! 오오오오올~~ 강화좀 해봣네 40프로임ㅋㅋ'
             }
             else if (percent<6){
                 result.res='ㅋㅋㅋㅋㅋㅋㅋㅋ 똥손 ㅅㄱ 게임 첨 해봄?ㅋㅋㅋㅋ'
             } break;
         case 'spear' :
-            if (percent>7){
+            if (percent>=7){
                 result.res='오~~성공! 오오오오올~~ 30프로 넘어섬 오올~~'
             }
             else if (percent<7){
                 result.res='ㅋㅋㅋㅋㅋㅋㅋㅋ 똥손 ㅅㄱ 게임 첨 해봄?ㅋㅋㅋㅋ'
             } break;
         case 'axe' :
-            if (percent>8){
+            if (percent>=8){
                 result.res='오~~대박 성공 확률 20퍼임ㅋㅋㅋㅋ'
             }
             else if (percent<8){
                 result.res='ㅋㅋㅋㅋㅋㅋㅋㅋ 똥손 ㅅㄱ 게임 첨 해봄?ㅋㅋㅋㅋ'
             } break;
         case 'cookKnife' :
-            if (percent>9){
-                result.res='성공시킨 너도 대단한다 10퍼, 식칼을 왜 강화하는거야ㅋㅋㅋ'
+            if (percent>=10){
+                result.res='성공시킨 너도 참 대단하다ㅋㅋㅋ, 식칼을 왜 강화하는거야ㅋㅋㅋ'
             }
-            else if (percent<9){
+            else if (percent<10){
                 result.res='식칼을 왜 강화하려는거야ㅋㅋㅋ 극악난이도임ㅋㅋㅋ'
-            } break;
-        
+            } break;       
     }
-
+    return result
 }
